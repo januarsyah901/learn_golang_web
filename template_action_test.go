@@ -31,3 +31,27 @@ func TestIfActionTemplate(t *testing.T) {
 	}
 	fmt.Println(string(body))
 }
+
+func WithActionTemplate(w http.ResponseWriter, r *http.Request) {
+	t := template.Must(template.ParseFiles("./templates/address.gohtml"))
+	t.ExecuteTemplate(w, "address.gohtml", Page{
+		Title: "Template Struct",
+		Name:  "Janu",
+		Address: Address{
+			Street: "JL. Suidrman",
+			City:   "gubeng",
+		},
+	})
+}
+
+func TestWithActionTemplate(t *testing.T) {
+	request := httptest.NewRequest(http.MethodGet, "http://localhost:8080", nil)
+	recorder := httptest.NewRecorder()
+
+	WithActionTemplate(recorder, request)
+	body, err := io.ReadAll(recorder.Result().Body)
+	if err != nil {
+		panic(err)
+	}
+	fmt.Println(string(body))
+}

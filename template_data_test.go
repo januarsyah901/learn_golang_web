@@ -34,6 +34,7 @@ func TestTemplateDataMap(t *testing.T) {
 
 type Address struct {
 	Street string
+	City   string
 }
 type Page struct {
 	Title   string
