@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pendaftaran</title>
+</head>
+<body>
+<!-- Gambar di atas form -->
+<div style="text-align: center;">
+    <img src="/resources/banner.avif" alt="Header Image">
+</div>
+
+<!-- Form Pendaftaran -->
+<h1 style="text-align: center;">Form Pendaftaran</h1>
+<form action="/submit_form" method="post">
+    <!-- Nama Lengkap -->
+    <label for="nama">Nama Lengkap:</label><br>
+    <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap Anda" required><br><br>
+
+    <!-- Email -->
+    <label for="email">Alamat Email:</label><br>
+    <input type="email" id="email" name="email" placeholder="Masukkan alamat email Anda" required><br><br>
+
+    <!-- Jenis Kelamin -->
+    <label>Jenis Kelamin:</label><br>
+    <input type="radio" id="laki" name="jenis_kelamin" value="Laki-laki" required>
+    <label for="laki">Laki-laki</label><br>
+    <input type="radio" id="perempuan" name="jenis_kelamin" value="Perempuan">
+    <label for="perempuan">Perempuan</label><br><br>
+
+    <!-- Tombol Submit -->
+    <input type="submit" value="Daftar">
+    <br>
+    <br>
+    <!-- Gambar di dalam form -->
+    <div style="text-align: center;">
+        <img src="/resources/banner.avif" alt="Form Image">
+    </div><br>
+</form>
+</body>
+</html>
